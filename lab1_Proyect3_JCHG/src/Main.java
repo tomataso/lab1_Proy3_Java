@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
 
     static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
 
 
@@ -10,7 +11,7 @@ public class Main {
 
     }
 
-    public static void menuPrincipal(){
+    public static void menuPrincipal() {
 
         int opcion;
 
@@ -18,10 +19,11 @@ public class Main {
 
 
         while (true) {
+            System.out.println("*-----------------------------------*");
             System.out.println("Menú Principal:");
-            System.out.println("1. Ejercicio 1: Algoritmo sencillo.");
-            System.out.println("2. Ejercicio 2: Orientacion a objetos.");
-            System.out.println("4. Salir");
+            System.out.println("1. Ejercicio #1: Algoritmo sencillo.");
+            System.out.println("2. Ejercicio #2: Orientacion a objetos.");
+            System.out.println("4. Salir.");
             System.out.print("Digite una opción: ");
 
             opcion = input.nextInt();
@@ -46,11 +48,12 @@ public class Main {
                 default:
                     System.out.println("Opción invalidad, intente otra vez.");
             }
+
         }
 
     }
 
-    public static void menuPass(){
+    public static void menuPass() {
         int opcion;
         {
             System.out.println("Menú Paswword:");
@@ -67,13 +70,21 @@ public class Main {
                     System.out.println("1. Generar una contraseña de 8 digitos (Valores por defecto).");
                     Password pass = new Password();
                     pass.generarPassword();
-                    System.out.println("Contraseña generada: " + pass.getContrasenna() );
-
+                    System.out.println("+/-/-/-/-/-/+");
+                    System.out.println("Contraseña generada: " + pass.getContrasenna());
+                    System.out.println("¿Es fuerte? = " + pass.esFuerte());
                     break;
                 case 2:
+                    System.out.println("2. Generar una contraseña con longitud personalizada.");
 
+                    System.out.println("Digite la longitud deseada.");
+                    int longUsuario = input.nextInt();
 
-
+                    Password passLongPersonalizada = new Password(longUsuario);
+                    passLongPersonalizada.generarPassword();
+                    System.out.println("+/-/-/-/-/-/+");
+                    System.out.println("Contraseña generada: " + passLongPersonalizada.getContrasenna());
+                    System.out.println("¿Es fuerte? = " + passLongPersonalizada.esFuerte());
 
                     break;
 
@@ -84,8 +95,8 @@ public class Main {
                 default:
                     System.out.println("Opción invalidad, intente otra vez.");
             }
-        }
 
+        }
 
 
     }

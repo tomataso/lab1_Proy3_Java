@@ -3,8 +3,7 @@ import java.util.Scanner;
 
 public class OrdenarNums {
 
-    public void ordenar()
-    {
+    public void ordenar() {
 
         Scanner entrada = new Scanner(System.in);
         int[] numeros = new int[5];
@@ -14,7 +13,7 @@ public class OrdenarNums {
 
             int contador = i + 1;
 
-            System.out.println("Entrada #" + contador );
+            System.out.println("Entrada #" + contador);
             numeros[i] = entrada.nextInt();
         }
 
@@ -27,7 +26,7 @@ public class OrdenarNums {
             System.out.println(num);
 
 
-    }
+        }
 
         System.out.println("--- Fin de la lista ordenada --- ");
 

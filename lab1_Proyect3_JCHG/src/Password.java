@@ -2,11 +2,11 @@ import java.util.Random;
 
 public class Password {
 
-        int longitud;
-        String contrasenna;
+    int longitud;
+    String contrasenna;
 
 
-        // Constructor Base - Longitud = 8
+    // Constructor Base - Longitud = 8
     public Password() {
         this.longitud = 8;
 
@@ -41,7 +41,6 @@ public class Password {
     // Metodos
 
 
-
     public void generarPassword() {
 
         String caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -55,4 +54,26 @@ public class Password {
         this.contrasenna = new String(claveGenerada);
 
     }
+
+    public boolean esFuerte() {
+
+        int numMayusculas = 0;
+        int numMinusculas = 0;
+        int numDigitos = 0;
+
+        for (int i = 0; i < contrasenna.length(); i++) {
+            char c = contrasenna.charAt(i);
+            if (Character.isUpperCase(c)) {
+                numMayusculas++;
+            } else if (Character.isLowerCase(c)) {
+                numMinusculas++;
+            } else if (Character.isDigit(c)) {
+                numDigitos++;
+            }
+        }
+
+        return (numMayusculas > 2) && (numMinusculas > 1) && (numDigitos > 5);
+    }
+
 }
+
