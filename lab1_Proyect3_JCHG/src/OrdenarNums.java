@@ -14,13 +14,13 @@ public class OrdenarNums {
 
             int contador = i + 1;
 
-            System.out.println("Este es el número #" + contador );
+            System.out.println("Entrada #" + contador );
             numeros[i] = entrada.nextInt();
         }
 
         Arrays.sort(numeros);
 
-        System.out.println("Lista ordenada");
+        System.out.println("Lista ordenada: ");
         for (int num : numeros) {
 
 
@@ -28,6 +28,8 @@ public class OrdenarNums {
 
 
     }
+
+        System.out.println("--- Fin de la lista ordenada --- ");
 
     }
 }
